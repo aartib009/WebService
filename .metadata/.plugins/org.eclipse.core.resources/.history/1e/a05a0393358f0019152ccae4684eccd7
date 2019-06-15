@@ -1,0 +1,99 @@
+package com.sushma.travels;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Travels {
+	
+public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\group014\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://phptravels.org/clientarea.php");
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[3]/a")).click();
+	
+		Thread.sleep(1000);
+		
+	     driver.findElement(By.xpath("//*[@id=\"inputFirstName\"]")).sendKeys("sushma");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputLastName\"]")).sendKeys("jadhav");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputEmail\"]")).sendKeys("jadhavsushma226@gmail.com");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputPhone\"]")).sendKeys("8987654534");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputCompanyName\"]")).sendKeys("infoway");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputAddress1\"]")).sendKeys("at post:shetphale Dist:Atpadi Tal:Atpadi");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputCity\"]")).sendKeys("pune");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"stateinput\"]")).sendKeys("MAHARASTRRA");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputPostcode\"]")).sendKeys("415306");
+	     Thread.sleep(1000);
+	     
+	     
+	     WebElement we=driver.findElement(By.xpath("//*[@id=\"inputCountry\"]"));
+			Select drop=new Select(we);
+			drop.selectByVisibleText("India");
+			Thread.sleep(2000);
+			
+			
+	    driver.findElement(By.xpath("//*[@id=\"inputTaxId\"]")).sendKeys("12");
+	     Thread.sleep(1000); 
+	     
+	     WebElement w=driver.findElement(By.xpath("//*[@id=\"customfield1\"]"));
+			Select d=new Select(w);
+			d.selectByVisibleText("Google");
+			Thread.sleep(2000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"customfield2\"]")).sendKeys("8776564534");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputNewPassword1\"]")).sendKeys("J@dhavsush");
+	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"inputNewPassword2\"]")).sendKeys("J@dhavsush");
+	     Thread.sleep(1000);
+	     
+	     
+//	     
+//	     
+//	     WebElement ee=driver.findElement(By.xpath("//*[@id=\"recaptcha-anchor\"]/div[1]"));
+//			Select dr=new Select(ee);
+//			dr.selectByVisibleText("");
+//			Thread.sleep(2000);
+			
+			
+			
+		//Select dropdown = new Select(driver.findElement(By.xpath("//*[@id=\"recaptcha-anchor\"]/div[1]")));
+//	   
+//	     
+//	     
+//	     driver.findElement(By.xpath("//*[@id=\"inputLastName\"]")).sendKeys("jadhav");
+//	     Thread.sleep(1000);
+	     
+	     driver.findElement(By.xpath("//*[@id=\"frmCheckout\"]/p/input")).click();
+	     Thread.sleep(1000);
+	 
+		
+
+}
+}
+
+

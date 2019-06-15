@@ -1,0 +1,62 @@
+package com.infoway;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class TravelTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\group014\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://phptravels.org/clientarea.php");
+		
+		driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[3]/a")).click();
+		
+		driver.findElement(By.name("firstname")).sendKeys("Aarti");
+		
+		driver.findElement(By.name("lastname")).sendKeys("Bhosale");
+		
+		driver.findElement(By.id("inputEmail")).sendKeys("aartib009@gmail.com");
+		
+		driver.findElement(By.id("inputPhone")).sendKeys("7385811879");
+		
+		driver.findElement(By.name("companyname")).sendKeys("Infoway");
+		
+		driver.findElement(By.name("address1")).sendKeys("Paud,Road");
+		
+		driver.findElement(By.name("address2")).sendKeys("Kothrud");
+		
+		driver.findElement(By.id("inputCity")).sendKeys("Pune");
+		
+		driver.findElement(By.id("stateinput")).sendKeys("Maharashtra");
+		
+		driver.findElement(By.name("postcode")).sendKeys("413101");
+		
+		WebElement we=driver.findElement(By.xpath("//*[@id=\"inputCountry\"]"));
+		Select drop=new Select(we);
+		drop.selectByVisibleText("India");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("inputTaxId")).sendKeys("876543");
+		
+		WebElement we1=driver.findElement(By.xpath("//*[@id=\"customfield1\"]"));
+		Select drop1=new Select(we1);
+		drop1.selectByVisibleText("Google");
+		
+		driver.findElement(By.name("customfield[2]")).sendKeys("7385811879");
+		
+		driver.findElement(By.name("password")).sendKeys("aarti");
+		
+		driver.findElement(By.name("password2")).sendKeys("aarti");
+		
+		driver.findElement(By.xpath("/html/body/div[2]/div[3]/div[1]/div/div")).click();
+
+		driver.findElement(By.xpath("//*[@id=\"frmCheckout\"]/p/input")).click();
+	}
+
+}

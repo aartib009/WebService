@@ -1,0 +1,32 @@
+package com.infoway;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TravelTest {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\group014\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://phptravels.org/clientarea.php");
+		
+		driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[3]/a")).click();
+		
+		driver.findElement(By.name("firstname")).sendKeys("Aarti");
+		
+		driver.findElement(By.name("lastname")).sendKeys("Bhosale");
+		
+		driver.findElement(By.id("inputEmail")).sendKeys("aartib009@gmail.com");
+		
+		driver.findElement(By.id("inputPhone")).sendKeys("7385811879");
+		
+		
+		
+		
+
+	}
+
+}
